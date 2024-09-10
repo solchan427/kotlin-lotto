@@ -1,8 +1,10 @@
+package lotto.domain
+
 class WinningLotto(val numbers: Lotto, val bonus: LottoNumber) {
 
     init {
         if (numbers.contains(bonus)) {
-            throw IllegalArgumentException("Lotto $bonus has duplicated number")
+            throw IllegalArgumentException("lotto.domain.Lotto $bonus has duplicated number")
         }
     }
 

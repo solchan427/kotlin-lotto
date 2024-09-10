@@ -1,3 +1,9 @@
+package lotto.view
+
+import lotto.domain.Lotto
+import lotto.domain.Rank
+import lotto.domain.WinningResult
+
 object Output {
     fun viewLottoCount(count: Int) {
         println(count.toString().plus("를 구매했습니다."))

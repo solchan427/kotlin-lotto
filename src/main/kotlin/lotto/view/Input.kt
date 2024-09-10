@@ -1,3 +1,9 @@
+package lotto.view
+
+import lotto.domain.Lotto
+import lotto.domain.LottoNumber
+import lotto.domain.WinningLotto
+
 class Input {
     companion object {
         fun readPrice(): Int {

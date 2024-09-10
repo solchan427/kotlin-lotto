@@ -1,8 +1,10 @@
+package lotto.domain
+
 object LottoIssuer {
 
     fun issues(count: Int): List<Lotto> {
         return (1..count).map {
-            this.issue()
+            issue()
         }.toList()
     }
 

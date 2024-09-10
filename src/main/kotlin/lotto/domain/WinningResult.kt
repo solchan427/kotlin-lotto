@@ -1,3 +1,5 @@
+package lotto.domain
+
 class WinningResult(private val ranks: List<Rank>) {
 
     fun profit(price: Double): Double {

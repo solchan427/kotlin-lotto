@@ -1,3 +1,10 @@
+import lotto.domain.Lotto
+import lotto.domain.LottoIssuer
+import lotto.domain.Rank
+import lotto.domain.WinningResult
+import lotto.view.Input
+import lotto.view.Output
+
 fun main() {
     val price = Input.readPrice()
     val count = price / 1000

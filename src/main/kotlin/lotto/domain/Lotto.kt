@@ -1,3 +1,5 @@
+package lotto.domain
+
 class Lotto(val numbers: Set<LottoNumber>) {
 
     init {

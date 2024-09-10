@@ -1,3 +1,7 @@
+import lotto.domain.Lotto
+import lotto.domain.LottoNumber
+import lotto.domain.Rank
+import lotto.domain.WinningLotto
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows

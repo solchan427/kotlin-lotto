@@ -1,3 +1,5 @@
+package lotto
+
 import lotto.domain.Lotto
 import lotto.domain.LottoIssuer
 import lotto.domain.Rank

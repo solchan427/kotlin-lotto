@@ -9,9 +9,9 @@ object LottoIssuer {
     }
 
     private fun issue(): Lotto {
-        val lottoNumbers = generateSequence { ((1..45).random()) }
+        val lottoNumbers = generateSequence { ((MINIMUM_LOTTO_NUMBER..MAXIMUM_LOTTO_NUMBER).random()) }
             .distinct()
-            .take(6)
+            .take(LOTTO_NUMBERS)
             .map { LottoNumber(it) }
             .toSet()
 

@@ -1,9 +1,11 @@
 package lotto.domain
 
+const val LOTTO_NUMBERS: Int = 6
+
 class Lotto(val numbers: Set<LottoNumber>) {
 
     init {
-        require(numbers.size == 6)
+        require(numbers.size == LOTTO_NUMBERS)
     }
 
     fun contains(lottoNumber: LottoNumber): Boolean {

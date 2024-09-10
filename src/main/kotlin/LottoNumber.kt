@@ -1,15 +1,7 @@
-import java.lang.IllegalArgumentException
-
 class LottoNumber(private val number: Int) {
 
     init {
-        if (number < 1 || number > 45) {
-            throw IllegalArgumentException("로또 번호는 1부터 45입니다.")
-        }
-        /**
-         * TODO
-         *  require(number in (0..45))
-         */
+        require(number in (1..45)) { "로또 번호는 1부터 45입니다." }
     }
 
     override fun equals(other: Any?): Boolean {

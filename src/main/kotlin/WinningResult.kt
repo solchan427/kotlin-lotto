@@ -5,4 +5,11 @@ class WinningResult(private val ranks: List<Rank>) {
 
         return totalCompensation / price
     }
+
+    fun matchCount(rank: Rank): Int {
+        return ranks
+            .groupingBy { it }
+            .eachCount()
+            .getOrDefault(rank, 0)
+    }
 }

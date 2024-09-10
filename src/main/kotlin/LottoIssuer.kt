@@ -1,12 +1,9 @@
 class LottoIssuer() {
 
-    fun issues(count: Int): ArrayList<Lotto> {
-        val lottos: ArrayList<Lotto> = ArrayList<Lotto>()
-        repeat(count) {
-            lottos.add(this.issue())
-        }
-
-        return lottos
+    fun issues(count: Int): List<Lotto> {
+        return (1..count).map {
+            this.issue()
+        }.toList()
     }
 
     private fun issue(): Lotto {

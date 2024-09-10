@@ -10,18 +10,15 @@ fun main() {
 
     val winningLotto = Input.winningLotto()
 
-    val ranks: Set<Rank> = lottos.map { winningLotto.match(it) }.toSet()
+    val ranks: List<Rank> = lottos.map { winningLotto.match(it) }.toList()
+    val winningResult = WinningResult(ranks)
 
     val rankCounts: Map<Rank, Int> = ranks
         .groupingBy { it }
         .eachCount()
 
-    var totalCompensation: Double = 0.0
     for (rank in Rank.winningRanks()) {
         val matchCount = rankCounts.getOrDefault(rank, 0)
-        if (matchCount != 0) {
-            totalCompensation += matchCount * rank.winningMoney
-        }
         if (rank == Rank.SECOND) {
             println("${rank.countOfMatch}개 일치, 보너스 볼 일치(${rank.winningMoney}원) - ${matchCount}개")
             continue
@@ -29,9 +26,8 @@ fun main() {
         println("${rank.countOfMatch}개 일치 (${rank.winningMoney}원) - ${matchCount}개")
     }
 
-    val profitRate = totalCompensation / price
-    print("총 수익률은 $profitRate 입니다.")
-    if (profitRate < 1.0) {
+    print("총 수익률은 ${winningResult.profit(price.toDouble())} 입니다.")
+    if (winningResult.profit(price.toDouble()) < 1.0) {
         println("(기준이 1이기 때문에 결과적으로 손해라는 의미임)")
     }
 }

@@ -9,12 +9,13 @@ class LottoIssuer() {
         return lottos
     }
 
-    fun issue(): Lotto {
-        val numbers: MutableSet<LottoNumber> = HashSet<LottoNumber>()
-        while (numbers.size < 6) {
-            val lottoNumber = LottoNumber((1..45).random())
-            numbers.add(lottoNumber)
-        }
-        return Lotto(numbers)
+    private fun issue(): Lotto {
+        val lottoNumbers: Set<LottoNumber> = generateSequence { ((1..45).random()) }
+            .distinct()
+            .take(6)
+            .map { LottoNumber(it) }
+            .toSet()
+
+        return Lotto(lottoNumbers)
     }
 }

@@ -1,4 +1,4 @@
-class LottoIssuer() {
+object LottoIssuer {
 
     fun issues(count: Int): List<Lotto> {
         return (1..count).map {
@@ -7,7 +7,7 @@ class LottoIssuer() {
     }
 
     private fun issue(): Lotto {
-        val lottoNumbers: Set<LottoNumber> = generateSequence { ((1..45).random()) }
+        val lottoNumbers = generateSequence { ((1..45).random()) }
             .distinct()
             .take(6)
             .map { LottoNumber(it) }

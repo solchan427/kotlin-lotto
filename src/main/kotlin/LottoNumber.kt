@@ -1,4 +1,4 @@
-class LottoNumber(private val number: Int) {
+data class LottoNumber(private val number: Int) {
 
     init {
         require(number in (1..45)) { "로또 번호는 1부터 45입니다." }

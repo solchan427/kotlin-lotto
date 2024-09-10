@@ -14,9 +14,9 @@ class Input {
                 .toSet()
 
             println("보너스 볼을 입력해 주세요.")
-            val bonusNumber: LottoNumber = LottoNumber(readln().trim().toInt())
+            val bonusNumber = LottoNumber(readln().trim().toInt())
 
-            return WinningLotto(lottoNumbers, bonusNumber)
+            return WinningLotto(Lotto(lottoNumbers), bonusNumber)
         }
     }
 }

@@ -1,4 +1,4 @@
-class WinningLotto(val numbers: Set<LottoNumber>, val bonus: LottoNumber) {
+class WinningLotto(val numbers: Lotto, val bonus: LottoNumber) {
 
     init {
         if (numbers.contains(bonus)) {
@@ -7,8 +7,8 @@ class WinningLotto(val numbers: Set<LottoNumber>, val bonus: LottoNumber) {
     }
 
     fun match(lotto: Lotto): Rank {
-        val matchCount: Int = numbers.intersect(lotto.numbers).count()
-        val matchBonus: Boolean = lotto.numbers.contains(bonus)
+        val matchCount: Int = numbers.matchCount(lotto)
+        val matchBonus: Boolean = numbers.contains(bonus)
 
         return Rank.valueOf(matchCount, matchBonus)
     }

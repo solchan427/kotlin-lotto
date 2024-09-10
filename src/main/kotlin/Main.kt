@@ -3,14 +3,12 @@ fun main() {
     val count = price / 1000
     println(count.toString().plus("를 구매했습니다."))
 
-    val lottoIssuer = LottoIssuer()
-
-    val lottos: List<Lotto> = lottoIssuer.issues(count)
+    val lottos: List<Lotto> = LottoIssuer.issues(count)
     lottos.forEach { println(it.numbers) }
 
     val winningLotto = Input.winningLotto()
 
-    val ranks: List<Rank> = lottos.map { winningLotto.match(it) }.toList()
+    val ranks: List<Rank> = lottos.map { winningLotto.match(it) }
     val winningResult = WinningResult(ranks)
 
     val rankCounts: Map<Rank, Int> = ranks
